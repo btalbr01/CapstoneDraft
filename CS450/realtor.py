@@ -1,19 +1,6 @@
 from bs4 import BeautifulSoup
 import requests
 import pandas as pd
-import locale
-import math
-from IPython.display import HTML
-import numpy as np
-from sklearn.datasets import load_iris
-pd.set_option('display.max_columns', None)
-pd.set_option('display.max_colwidth', None)
-
-locale.setlocale(locale.LC_ALL, '')
-loc = locale.getlocale()
-data = load_iris()
-
-import requests
 
 cookies = {
     'split': 'n',

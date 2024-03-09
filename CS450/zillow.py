@@ -1,13 +1,6 @@
 from bs4 import BeautifulSoup
 import requests
 import pandas as pd
-import locale
-import math
-from IPython.display import HTML
-import numpy as np
-from sklearn.datasets import load_iris
-pd.set_option('display.max_columns', None)
-pd.set_option('display.max_colwidth', None)
 
 cookies = {
     'zguid': '24|%240315aaad-95c6-414d-bd1e-1de6f3465f41',
@@ -138,6 +131,7 @@ baths = []
 area = []
 url = []
 propertyType = []
+measurement = []
 
 for result in result_items:
  address.append(result['addressStreet'])
@@ -147,8 +141,8 @@ for result in result_items:
  area.append(result['area'])
  url.append(result['detailUrl'])
  propertyType.append(result['hdpData']['homeInfo']['homeType'])
+ measurement.append("sqft")
 
-
-zillow_df = pd.DataFrame({'Address':address, 'Price':price, 'Beds':beds, 'Baths':baths, 'Sqft':area, 'Property Type':propertyType,'URL':url})
+zillow_df = pd.DataFrame({'Address':address, 'Price':price, 'Beds':beds, 'Baths':baths, 'Area':area, 'Measurement':measurement, 'Property Type':propertyType,'URL':url})
 
 zillow_df.to_csv('zillow_homes.csv', index=False)
