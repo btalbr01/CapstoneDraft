@@ -1,7 +1,9 @@
+#Imports for web scraping and pandas DataFrames
 from bs4 import BeautifulSoup
 import requests
 import pandas as pd
 
+#Output from a website that converts curl commands to Python from the scraped website
 cookies = {
     'zguid': '24|%240315aaad-95c6-414d-bd1e-1de6f3465f41',
     'zgsession': '1|0c2c13d7-1f93-472a-9a61-b3c6c92fb6aa',
@@ -124,6 +126,7 @@ results_json = response.json()
 
 result_items = results_json['cat1']['searchResults']['listResults']
 
+#Arrays for the relevant columns to be made
 address = []
 price = []
 beds = []
@@ -133,6 +136,7 @@ url = []
 propertyType = []
 measurement = []
 
+#For loop to fill each array
 for result in result_items:
  address.append(result['addressStreet'])
  price.append(result['unformattedPrice'])
@@ -141,8 +145,11 @@ for result in result_items:
  area.append(result['area'])
  url.append(result['detailUrl'])
  propertyType.append(result['hdpData']['homeInfo']['homeType'])
+ #Column to specify unit of measurment
  measurement.append("sqft")
 
+#Creating a DataFrame 
 zillow_df = pd.DataFrame({'Address':address, 'Price':price, 'Beds':beds, 'Baths':baths, 'Area':area, 'Measurement':measurement, 'Property Type':propertyType,'URL':url})
 
+#Saving the DataFrame to a .csv
 zillow_df.to_csv('zillow_homes.csv', index=False)

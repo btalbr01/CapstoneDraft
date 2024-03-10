@@ -1,7 +1,9 @@
+#Imports for web scraping and pandas DataFrames
 from bs4 import BeautifulSoup
 import requests
 import pandas as pd
 
+#Output from a website that converts curl commands to Python from the scraped website
 cookies = {
     'zguid': '24|%240315aaad-95c6-414d-bd1e-1de6f3465f41',
     'zjs_anonymous_id': '%220315aaad-95c6-414d-bd1e-1de6f3465f41%22',
@@ -129,17 +131,11 @@ json_data = {
 
 response = requests.put('https://www.zillow.com/async-create-search-page-state', cookies=cookies, headers=headers, json=json_data)
 
-# Note: json_data will not be serialized by requests
-# exactly as it was in the original request.
-#data = '{"searchQueryState":{"pagination":{},"isMapVisible":false,"mapBounds":{"west":-85.2367016328125,"east":-84.3907543671875,"south":36.53753242023184,"north":37.04780932906671},"usersSearchTerm":"42633","regionSelection":[{"regionId":76402,"regionType":7}],"filterState":{"sortSelection":{"value":"globalrelevanceex"},"price":{"min":null,"max":null},"monthlyPayment":{"min":null,"max":null},"isSingleFamily":{"value":false},"isTownhouse":{"value":false},"isMultiFamily":{"value":false},"isCondo":{"value":false},"isAllHomes":{"value":true},"isApartment":{"value":false},"isManufactured":{"value":false},"isApartmentOrCondo":{"value":false}},"isListVisible":true},"wants":{"cat1":["listResults"],"cat2":["total"]},"requestId":3,"isDebugRequest":false}'
-#response = requests.put('https://www.zillow.com/async-create-search-page-state', cookies=cookies, headers=headers, data=data)
-
-response = requests.put('https://www.zillow.com/async-create-search-page-state', cookies=cookies, headers=headers, json=json_data)
-
 results_json = response.json()
 
 result_items = results_json['cat1']['searchResults']['listResults']
 
+#Arrays for the relevant columns to be made
 address = []
 price = []
 area = []
@@ -147,16 +143,18 @@ url = []
 propertyType = []
 measurement = []
 
+#For loop to fill each array
 for result in result_items:
  address.append(result['addressStreet'])
  price.append(result['unformattedPrice'])
  area.append(result['hdpData']['homeInfo']['lotAreaValue'])
  url.append(result['detailUrl'])
  propertyType.append(result['hdpData']['homeInfo']['homeType'])
+ #Column to specify unit of measurment
  measurement.append("acres")
 
+#Creating a DataFrame 
  zillow_land_df = pd.DataFrame({'Address':address, 'Price':price, 'Area':area, 'Measurement':measurement,'Property Type':propertyType, 'URL':url})
 
-
-
+#Saving the DataFrame to a .csv
 zillow_land_df.to_csv('zillow_land.csv', index=False)

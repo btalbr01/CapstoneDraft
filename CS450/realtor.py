@@ -1,7 +1,9 @@
+#Imports for web scraping and pandas DataFrames
 from bs4 import BeautifulSoup
 import requests
 import pandas as pd
 
+#Output from a website that converts curl commands to Python from the scraped website
 cookies = {
     'split': 'n',
     'split_tcv': '184',
@@ -159,6 +161,7 @@ results_json = response.json()
 
 result_items = results_json['data']['home_search']['properties']
 
+#Arrays for the relevant columns to be made
 address = []
 price = []
 beds = []
@@ -166,7 +169,9 @@ baths = []
 area = []
 propertyType = []
 url = []
+measurement = []
 
+#For loop to fill each array
 for result in result_items:
   address.append(result['location']['address']['line'])
   price.append(result['list_price'])
@@ -175,7 +180,10 @@ for result in result_items:
   area.append(result['description']['sqft'])
   propertyType.append((result['description']['type']).upper())
   url.append('https://www.realtor.com/realestateandhomes-detail/' + result['permalink'] + '?from=srp-list-card')
+  measurement.append("sqft")
 
+#Creating a DataFrame 
+realtor_houses_df = pd.DataFrame({'Address':address, 'Price':price, 'Beds':beds, 'Baths':baths, 'Area':area, 'Measurement':measurement, 'Property Type':propertyType, 'URL':url})
 
-realtor_houses_df = pd.DataFrame({'Address':address, 'Price':price, 'Beds':beds, 'Baths':baths, 'Sqft':area, 'Property Type':propertyType, 'URL':url})
+#Saving the DataFrame to a .csv
 realtor_houses_df.to_csv('realtor_homes.csv', index=False)

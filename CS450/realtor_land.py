@@ -1,7 +1,9 @@
+#Imports for web scraping and pandas DataFrames
 from bs4 import BeautifulSoup
 import requests
 import pandas as pd
 
+#Output from a website that converts curl commands to Python from the scraped website
 cookies = {
     'split': 'n',
     'split_tcv': '184',
@@ -159,10 +161,6 @@ response = requests.post(
     json=json_data,
 )
 
-# Note: json_data will not be serialized by requests
-# exactly as it was in the original request.
-#data = '{"query":"\\n  query ConsumerSearchQuery(\\n    $query: HomeSearchCriteria!\\n    $limit: Int\\n    $offset: Int\\n    $search_promotion: SearchPromotionInput\\n    $sort: [SearchAPISort]\\n    $sort_type: SearchSortType\\n    $client_data: JSON\\n    $bucket: SearchAPIBucket\\n  ) {\\n    home_search: home_search(\\n      query: $query\\n      sort: $sort\\n      limit: $limit\\n      offset: $offset\\n      sort_type: $sort_type\\n      client_data: $client_data\\n      bucket: $bucket\\n      search_promotion: $search_promotion\\n    ) {\\n      count\\n      total\\n      search_promotion {\\n        name\\n        slots\\n        promoted_properties {\\n          id\\n          from_other_page\\n        }\\n      }\\n      mortgage_params {\\n        interest_rate\\n      }\\n      properties: results {\\n        property_id\\n        list_price\\n        search_promotions {\\n          name\\n          asset_id\\n        }\\n        primary_photo(https: true) {\\n          href\\n        }\\n        rent_to_own {\\n          right_to_purchase\\n          rent\\n        }\\n        listing_id\\n        matterport\\n        virtual_tours {\\n          href\\n          type\\n        }\\n        status\\n        products {\\n          products\\n          brand_name\\n        }\\n        source {\\n          id\\n          type\\n          spec_id\\n          plan_id\\n          agents {\\n            office_name\\n          }\\n        }\\n        lead_attributes {\\n          show_contact_an_agent\\n          opcity_lead_attributes {\\n            cashback_enabled\\n            flip_the_market_enabled\\n          }\\n          lead_type\\n          ready_connect_mortgage {\\n            show_contact_a_lender\\n            show_veterans_united\\n          }\\n        }\\n        community {\\n          description {\\n            name\\n          }\\n          property_id\\n          permalink\\n          advertisers {\\n            office {\\n              hours\\n              phones {\\n                type\\n                number\\n                primary\\n                trackable\\n              }\\n            }\\n          }\\n          promotions {\\n            description\\n            href\\n            headline\\n          }\\n        }\\n        permalink\\n        price_reduced_amount\\n        description {\\n          name\\n          beds\\n          baths_consolidated\\n          sqft\\n          lot_sqft\\n          baths_max\\n          baths_min\\n          beds_min\\n          beds_max\\n          sqft_min\\n          sqft_max\\n          type\\n          sub_type\\n          sold_price\\n          sold_date\\n        }\\n        location {\\n          street_view_url\\n          address {\\n            line\\n            postal_code\\n            state\\n            state_code\\n            city\\n            coordinate {\\n              lat\\n              lon\\n            }\\n          }\\n          county {\\n            name\\n            fips_code\\n          }\\n        }\\n        open_houses {\\n          start_date\\n          end_date\\n        }\\n        branding {\\n          type\\n          name\\n          photo\\n        }\\n        flags {\\n          is_coming_soon\\n          is_new_listing(days: 14)\\n          is_price_reduced(days: 30)\\n          is_foreclosure\\n          is_new_construction\\n          is_pending\\n          is_contingent\\n        }\\n        list_date\\n        photos(limit: 2, https: true) {\\n          href\\n        }\\n        advertisers {\\n          type\\n          builder {\\n            name\\n            href\\n            logo\\n          }\\n        }\\n      }\\n    }\\n  }\\n","variables":{"geoSupportedSlug":"42633","query":{"unique":true,"status":["for_sale","ready_to_build"],"search_location":{"location":"42633, Monticello, KY"},"type":["land"]},"client_data":{"device_data":{"device_type":"desktop"}},"limit":42,"offset":0,"sort_type":"relevant","search_promotion":{"name":"POSTALCODE","slots":[5,6,7,8],"promoted_properties":[[],[]]}},"isClient":true,"visitor_id":"212e4dad-e496-4f18-9d0c-f76eb880948c"}'
-#response = requests.post('https://www.realtor.com/api/v1/rdc_search_srp', params=params, cookies=cookies, headers=headers, data=data)
 
 realtor_response = requests.put('https://www.realtor.com/realestateandhomes-search/42633/type-land', cookies=cookies, headers=headers, json=json_data)
 
@@ -170,6 +168,7 @@ results_json = response.json()
 
 result_items = results_json['data']['home_search']['properties']
 
+#Arrays for the relevant columns to be made
 address = []
 price = []
 area = []
@@ -177,7 +176,7 @@ url = []
 propertyType = []
 measurement = []
 
-
+#For loop to fill each array
 for result in result_items:
   address.append(result['location']['address']['line'])
   price.append(result['list_price'])
@@ -186,6 +185,8 @@ for result in result_items:
   url.append('https://www.realtor.com/realestateandhomes-detail/' + result['permalink'] + '?from=srp-list-card')
   measurement.append("acres")
 
+#Creating a DataFrame 
   realtor_land_df = pd.DataFrame({'Address':address, 'Price':price, 'Area':area, 'Measurement':measurement,'Property Type':propertyType, 'URL':url})
 
+#Saving the DataFrame to a .csv
   realtor_land_df.to_csv('realtor_land.csv', index=False)
