@@ -1,5 +1,4 @@
 #Imports for web scraping and pandas DataFrames
-from bs4 import BeautifulSoup
 import requests
 import pandas as pd
 

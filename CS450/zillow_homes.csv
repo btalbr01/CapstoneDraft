@@ -1,36 +1,38 @@
 Address,Price,Beds,Baths,Area,Measurement,Property Type,URL
 451 Shaw Valley Rd,219000,3,2.0,1848,sqft,SINGLE_FAMILY,https://www.zillow.com/homedetails/451-Shaw-Valley-Rd-Monticello-KY-42633/115485976_zpid/
 245 Fairview Ave,149900,3,1.0,0,sqft,SINGLE_FAMILY,https://www.zillow.com/homedetails/245-Fairview-Ave-Monticello-KY-42633/234316062_zpid/
-204 Hicks Ramsey Rd,429900,3,3.0,0,sqft,SINGLE_FAMILY,https://www.zillow.com/homedetails/204-Hicks-Ramsey-Rd-Monticello-KY-42633/115479479_zpid/
 84 Highway 3286,129900,3,1.0,984,sqft,SINGLE_FAMILY,https://www.zillow.com/homedetails/84-Highway-3286-Monticello-KY-42633/115478820_zpid/
-52 Zollicoffer Estates Rd,229500,3,2.0,1404,sqft,SINGLE_FAMILY,https://www.zillow.com/homedetails/52-Zollicoffer-Estates-Rd-Monticello-KY-42633/115485453_zpid/
 128 Eastland Dr,165000,3,1.0,1144,sqft,SINGLE_FAMILY,https://www.zillow.com/homedetails/128-Eastland-Dr-Monticello-KY-42633/234312253_zpid/
-153 Bartleston Subdivision Rd,244900,3,2.0,1374,sqft,SINGLE_FAMILY,https://www.zillow.com/homedetails/153-Bartleston-Subdivision-Rd-Monticello-KY-42633/120267392_zpid/
+389 Don Gregory Rd,125900,3,1.0,999,sqft,SINGLE_FAMILY,https://www.zillow.com/homedetails/389-Don-Gregory-Rd-Monticello-KY-42633/115481066_zpid/
 643 Highway 1275 S,216000,4,3.0,2210,sqft,SINGLE_FAMILY,https://www.zillow.com/homedetails/643-Highway-1275-S-Monticello-KY-42633/115484548_zpid/
 110 Jenkins St,65000,3,1.0,1196,sqft,SINGLE_FAMILY,https://www.zillow.com/homedetails/110-Jenkins-St-Monticello-KY-42633/115486035_zpid/
-143 Red Fox Dr,739900,4,3.0,0,sqft,SINGLE_FAMILY,https://www.zillow.com/homedetails/143-Red-Fox-Dr-Monticello-KY-42633/305828468_zpid/
+1163 Ramsey Point Rd,219900,2,3.0,1228,sqft,SINGLE_FAMILY,https://www.zillow.com/homedetails/1163-Ramsey-Point-Rd-Monticello-KY-42633/2067135310_zpid/
+4795 Highway 1009 S,195130,3,3.0,2182,sqft,SINGLE_FAMILY,https://www.zillow.com/homedetails/4795-Highway-1009-S-Monticello-KY-42633/115480087_zpid/
+69 Club Hts,150000,3,1.0,930,sqft,SINGLE_FAMILY,https://www.zillow.com/homedetails/69-Club-Hts-Monticello-KY-42633/115481240_zpid/
 4685 Brammer Hill Ridge Rd,299900,4,1.0,1482,sqft,SINGLE_FAMILY,https://www.zillow.com/homedetails/4685-Brammer-Hill-Ridge-Rd-Monticello-KY-42633/234314564_zpid/
+290 Old Bethel Rd,99700,2,1.0,872,sqft,SINGLE_FAMILY,https://www.zillow.com/homedetails/290-Old-Bethel-Rd-Monticello-KY-42633/234309768_zpid/
 1095 Old Lock 21 Rd #21,654500,5,3.0,4106,sqft,SINGLE_FAMILY,https://www.zillow.com/homedetails/1095-Old-Lock-21-Rd-21-Monticello-KY-42633/115480813_zpid/
 1906 Green Ford Rd,150000,1,1.0,1428,sqft,SINGLE_FAMILY,https://www.zillow.com/homedetails/1906-Green-Ford-Rd-Monticello-KY-42633/115478411_zpid/
 332 Turner Ln,269000,4,2.0,2100,sqft,SINGLE_FAMILY,https://www.zillow.com/homedetails/332-Turner-Ln-Monticello-KY-42633/2054549712_zpid/
-1163 Ramsey Point Rd,219900,2,3.0,1228,sqft,SINGLE_FAMILY,https://www.zillow.com/homedetails/1163-Ramsey-Point-Rd-Monticello-KY-42633/2067135310_zpid/
 1391 Green Hill Estates Rd,490000,3,3.0,2010,sqft,SINGLE_FAMILY,https://www.zillow.com/homedetails/1391-Green-Hill-Estates-Rd-Monticello-KY-42633/2065531003_zpid/
 100 Waters Edge Trl,685000,5,4.0,3810,sqft,SINGLE_FAMILY,https://www.zillow.com/homedetails/100-Waters-Edge-Trl-Monticello-KY-42633/2078624247_zpid/
-389 Don Gregory Rd,125900,3,1.0,999,sqft,SINGLE_FAMILY,https://www.zillow.com/homedetails/389-Don-Gregory-Rd-Monticello-KY-42633/115481066_zpid/
 1681 Highway 1568,439900,5,5.0,4000,sqft,SINGLE_FAMILY,https://www.zillow.com/homedetails/1681-Highway-1568-Monticello-KY-42633/125366144_zpid/
 137 Indian Cave Rd,649000,5,5.0,5546,sqft,SINGLE_FAMILY,https://www.zillow.com/homedetails/137-Indian-Cave-Rd-Monticello-KY-42633/339910329_zpid/
 157 Old Fall Creek Rd,910000,4,3.0,2898,sqft,SINGLE_FAMILY,https://www.zillow.com/homedetails/157-Old-Fall-Creek-Rd-Monticello-KY-42633/115484101_zpid/
 482 Bugwood Rd,149500,1,2.0,1272,sqft,SINGLE_FAMILY,https://www.zillow.com/homedetails/482-Bugwood-Rd-Monticello-KY-42633/234308725_zpid/
 1265 Highway 776,329500,3,3.0,1734,sqft,SINGLE_FAMILY,https://www.zillow.com/homedetails/1265-Highway-776-Monticello-KY-42633/125366085_zpid/
 510 Green Hill Estates Rd,744000,5,6.0,7800,sqft,SINGLE_FAMILY,https://www.zillow.com/homedetails/510-Green-Hill-Estates-Rd-Monticello-KY-42633/115486480_zpid/
-4795 Highway 1009 S,195130,3,3.0,2182,sqft,SINGLE_FAMILY,https://www.zillow.com/homedetails/4795-Highway-1009-S-Monticello-KY-42633/115480087_zpid/
+153 Bartleston Subdivision Rd,244900,3,2.0,1374,sqft,SINGLE_FAMILY,https://www.zillow.com/homedetails/153-Bartleston-Subdivision-Rd-Monticello-KY-42633/120267392_zpid/
 167 Rankin Ln,164900,3,2.0,1148,sqft,SINGLE_FAMILY,https://www.zillow.com/homedetails/167-Rankin-Ln-Monticello-KY-42633/115484975_zpid/
 179 Eads Dr,168000,3,2.0,1400,sqft,SINGLE_FAMILY,https://www.zillow.com/homedetails/179-Eads-Dr-Monticello-KY-42633/115480292_zpid/
-69 Club Hts,150000,3,1.0,930,sqft,SINGLE_FAMILY,https://www.zillow.com/homedetails/69-Club-Hts-Monticello-KY-42633/115481240_zpid/
 2991 Highway 1275 S,97000,3,1.0,1128,sqft,SINGLE_FAMILY,https://www.zillow.com/homedetails/2991-Highway-1275-S-Monticello-KY-42633/115485780_zpid/
 490 Rolling Acres Dr,240000,5,3.0,2968,sqft,SINGLE_FAMILY,https://www.zillow.com/homedetails/490-Rolling-Acres-Dr-Monticello-KY-42633/115485944_zpid/
 140 Damron Dr,299900,4,3.0,3384,sqft,SINGLE_FAMILY,https://www.zillow.com/homedetails/140-Damron-Dr-Monticello-KY-42633/115483999_zpid/
 46 Hall St,148900,2,2.0,1260,sqft,SINGLE_FAMILY,https://www.zillow.com/homedetails/46-Hall-St-Monticello-KY-42633/234311492_zpid/
+204 Hicks Ramsey Rd,429900,3,3.0,0,sqft,SINGLE_FAMILY,https://www.zillow.com/homedetails/204-Hicks-Ramsey-Rd-Monticello-KY-42633/115479479_zpid/
+52 Zollicoffer Estates Rd,229500,3,2.0,1404,sqft,SINGLE_FAMILY,https://www.zillow.com/homedetails/52-Zollicoffer-Estates-Rd-Monticello-KY-42633/115485453_zpid/
 2738 1258th Hwy,375000,3,1.0,1248,sqft,SINGLE_FAMILY,https://www.zillow.com/homedetails/2738-1258th-Hwy-Monticello-KY-42633/2054242799_zpid/
-85 Vine St,185000,2,2.0,1530,sqft,SINGLE_FAMILY,https://www.zillow.com/homedetails/85-Vine-St-Monticello-KY-42633/115485934_zpid/
+31 Tall Timbers Ln,174900,3,2.0,1136,sqft,SINGLE_FAMILY,https://www.zillow.com/homedetails/31-Tall-Timbers-Ln-Monticello-KY-42633/115482946_zpid/
+85 Vine St,175000,2,2.0,1530,sqft,SINGLE_FAMILY,https://www.zillow.com/homedetails/85-Vine-St-Monticello-KY-42633/115485934_zpid/
 665 Highway 2393,389900,3,3.0,3044,sqft,SINGLE_FAMILY,https://www.zillow.com/homedetails/665-Highway-2393-Monticello-KY-42633/115483909_zpid/
+143 Red Fox Dr,739900,4,3.0,0,sqft,SINGLE_FAMILY,https://www.zillow.com/homedetails/143-Red-Fox-Dr-Monticello-KY-42633/305828468_zpid/
