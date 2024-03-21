@@ -192,7 +192,7 @@ realtor_houses_df.to_csv('realtor_homes.csv', index=False)
 
 host = 'localhost'
 user = 'root'
-password = 'ansgtyze'
+password = ''
 database = 'properties'
 
 csv_file_path = 'realtor_homes.csv'

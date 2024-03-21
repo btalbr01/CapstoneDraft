@@ -195,7 +195,7 @@ for result in result_items:
 
 host = 'localhost'
 user = 'root'
-password = 'ansgtyze'
+password = ''
 database = 'properties'
 
 csv_file_path = 'realtor_land.csv'

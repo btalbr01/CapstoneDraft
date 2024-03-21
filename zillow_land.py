@@ -163,7 +163,7 @@ zillow_land_df.to_csv('zillow_land.csv', index=False)
 
 host = 'localhost'
 user = 'root'
-password = 'ansgtyze'
+password = ''
 database = 'properties'
 
 csv_file_path = 'zillow_land.csv'

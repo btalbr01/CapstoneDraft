@@ -6,7 +6,7 @@ import mysql.connector
 
 host = 'localhost'
 user = 'root'
-password = 'ansgtyze'
+password = ''
 
 schema_name = 'properties'
 
@@ -27,5 +27,3 @@ subprocess.run(["python","zillow.py"])
 subprocess.run(["python","zillow_land.py"])
 subprocess.run(["python","realtor.py"])
 subprocess.run(["python","realtor_land.py"])
-
-subprocess.Popen("D:\Dbeaver\dbeaver.exe")
