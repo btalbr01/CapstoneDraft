@@ -35,13 +35,21 @@
 <body>
     <h2>Homes List</h2>
     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-        <label for="minPrice">Minimum Price:</label>
-        <input type="text" id="minPrice" name="minPrice" value="0">
-        <label for="maxPrice">Maximum Price:</label>
-        <input type="text" id="maxPrice" name="maxPrice" value="9999999">
-        <input type="submit" value="Filter">
-        <br>
-    </form>
+    <label for="minPrice">Minimum Price:</label>
+    <input type="text" id="minPrice" name="minPrice" value="0">
+    <label for="maxPrice">Maximum Price:</label>
+    <input type="text" id="maxPrice" name="maxPrice" value="9999999">
+    <br>
+    <label for="minBeds">Minimum Beds:</label>
+    <input type="text" id="minBeds" name="minBeds" value="0">
+    <label for="minBaths">Minimum Baths:</label>
+    <input type="text" id="minBaths" name="minBaths" value="0">
+    <label for="minArea">Minimum Area (sqft):</label>
+    <input type="text" id="minArea" name="minArea" value="0">
+    <input type="submit" value="Filter">
+    <br>
+</form>
+
     <button onclick="sortByPrice(true)">Sort by Price (Ascending)</button>
     <button onclick="sortByPrice(false)">Sort by Price (Descending)</button>
     <table>
@@ -83,12 +91,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Retrieve minimum and maximum prices from the form
     $minPrice = $_POST["minPrice"];
     $maxPrice = $_POST["maxPrice"];
+    $minBeds = isset($_POST["minBeds"]) ? $_POST["minBeds"] : 0;
+    $minBaths = isset($_POST["minBaths"]) ? $_POST["minBaths"] : 0;
+    $minArea = isset($_POST["minArea"]) ? $_POST["minArea"] : 0;
 
-    // SQL query to fetch data based on the selected category
+    // SQL query to fetch data based on the selected category and filter parameters
     if ($category == 'homes') {
-        $sql = "(SELECT Address, Price, Beds, Baths, Area, Measurement, `Property Type`, 'Zillow' AS Source, URL FROM zillow_homes WHERE Price BETWEEN $minPrice AND $maxPrice)
+        $sql = "(SELECT Address, Price, Beds, Baths, Area, Measurement, `Property Type`, 'Zillow' AS Source, URL FROM zillow_homes WHERE Price BETWEEN $minPrice AND $maxPrice AND Beds >= $minBeds AND Baths >= $minBaths AND Area >= $minArea)
                 UNION
-                (SELECT Address, Price, Beds, Baths, Area, Measurement, `Property Type`, 'Realtor' AS Source, URL FROM realtor_homes WHERE Price BETWEEN $minPrice AND $maxPrice)";
+                (SELECT Address, Price, Beds, Baths, Area, Measurement, `Property Type`, 'Realtor' AS Source, URL FROM realtor_homes WHERE Price BETWEEN $minPrice AND $maxPrice AND Beds >= $minBeds AND Baths >= $minBaths AND Area >= $minArea)";
     } elseif ($category == 'land') {
         $sql = "(SELECT * FROM zillow_land WHERE Price BETWEEN $minPrice AND $maxPrice)
                 UNION
@@ -114,6 +125,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "<tr><td colspan='9'>No results found</td></tr>";
     }
 }
+
 
 // Close connection
 $conn->close();
